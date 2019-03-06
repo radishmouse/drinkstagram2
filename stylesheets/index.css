@@ -38,14 +38,28 @@ html, body {
 
 }
 
+.biggrid {
+    display:flex;
+        /* grid-template-columns: 500px; */
+        align-items: flex-start;
+        /* margin:auto; */
+        position: absolute;  /*this should be the viewport,*/
+        top :50px;
+        display: flex;
+        /* flex-direction: row; */
+        justify-content: space-around;
+    
+
+}
 .bigimage {
     width : 70%;
     /* height: 400px; */
     object-fit: cover;
-    position: absolute;
     top:50px;
     margin: auto;
     z-index: 10;
+
+
 
 
 
