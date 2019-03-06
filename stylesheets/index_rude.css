@@ -1,0 +1,92 @@
+.main-title {
+    color: #A2B8C7;
+    color: rgba(61,88,109, .82) ;/* last number is transparency */
+    background: #94A588;
+    font-family: 'Abril Fatface', cursive;
+
+    clear: both;
+    background: rgb( 227, 221, 205) ; /* fb clunch */
+    margin: 0;
+    font-size: 40px;
+    position: relative;
+
+}
+
+.fancy-font , .navbar {
+    font-family: 'Righteous', cursive;
+    /*
+    font-family: 'Coiny', cursive;
+    font-family: 'Chonburi', cursive;
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Righteous', cursive;
+    */
+}
+
+.navbar {
+    
+    /* position: absolute;*/
+    display: inline;
+}
+
+.navbar ul li {
+    float: left;
+    margin: 10px;
+    list-style: none;
+    color: #108988
+}
+
+.submenu {
+    display: none;
+    position: relative;
+    clear: both;
+    
+}
+.submenu li li {
+    display: list-item;
+}
+.navbar:hover  .submenu{
+    display:block;
+    clear:both;
+    position: absolute;
+    
+}
+
+.submenu ul li {
+    list-style:none; 
+    /* display:list-item;*/
+    clear: both;
+}
+
+.main-image {
+    width: 1000px;
+   /* height: 200px;*/
+}
+.main-image img {
+    width:100%;
+    
+}
+
+.hipstaflower {
+    width:1000px;
+    height: 200px;
+    z-index:-2;
+    padding-top: 20px;
+    color:white;   /* text color */
+    z-index: 1;
+}
+/* if you put the opacity in the ::after element, it will ONLY affect the background image in here */
+.hipstaflower::after {
+    background-image: url(../images/hipstaflower.jpg) ;
+    opacity:0.7;            
+    background-size: cover;
+    object-fit: contain;
+    z-index: -2;
+    content: "";
+    position: absolute; /* must have this to see both backgrounds */
+    /* these are all needed, otherwise it only shows after the block, in the padding */
+    top: 0;  
+    left: 0;
+    bottom: 0;
+    right: 0; 
+
+}

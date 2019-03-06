@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instagram like page</title>
+    <!--paul irish css for box sizing-->
+    <link rel="stylesheet" href="stylesheets/paulirish.css">
+        <!-- css normalizer -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+    <!-- my css-->
+    <!-- <link rel="stylesheet" href="stylesheets/test.css"> -->
+<style>
+
+body {
+    background-color: grey;
+}
+.aspect-ratio-box {
+    height: 0;
+    overflow: hidden;
+    /* this is 16:9 aspect ratio */
+    padding-top: 56.25% ;
+
+    /* this makes it square */
+    padding-top: 100%;  
+
+    background: white;
+    position: relative;
+  }
+  /* this is redundant b/c I say the same thing in the img box below */
+  /* .aspect-ratio-box-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  } */
+.aspect-ratio-box-inside img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 5;
+    border: 4px solid red;
+    opacity: .9;
+}
+/* this works - it makes the picture bigger - like a zoom in. because it DOES not change the dimensions of the container box! */
+.aspect-ratio-box:hover img{
+    opacity: 1.0;
+    transform: scale(1.1);
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+h1 {
+    width:80%;
+    text-align: center;
+    margin:auto;
+}
+.liquorcabinet {
+    width : 100%;
+    position: absolute;
+    top :50px;
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* border: 5px solid gold; */
+    display: grid;
+    /* grid-template-columns: 320px 320px 320px 320px; */ 
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    /* max-width: 1000px; */
+}
+
+/* picture frame */
+
+.picture-frame {
+     /* if you set this to a percentage, and drop the height line you loose the square */
+    width:300px; 
+    height:300px;
+    float: left;
+    margin: 10px;
+    border: 2px solid cornflowerblue;
+
+    /* centering , but my object-fit below in the img tag with width=height is fixing this too.*/
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.picture-frame img {
+
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+</style>
+</head>
+<body>
+
+    <h1>Drinkstagram</h1>
+<!-- these pictures will stay in the square aspect ratio...and will grow with the screen resize.
+but they won't go into a flex box....that breaks it.
+i suspect the flex box needs to have a dimension.  and this wants flexbox to tell it the dimension...
+
+it will work with display:grid..but then you specify the width of the columns, so i think that is why
+-->
+    <div class="liquorcabinet">
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/dessert-moon.jpg" alt="Dessert Moon Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/el-guapo.jpg" alt="El Guapo Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/fig-margarita.jpg" alt="Fig Margarita Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/ginger-grapefruit-smoke.jpg" alt="Ginger Grapefruit Smoke Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/green-genie.jpg" alt="Green Genie Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/immortal-word.jpg" alt="Immortal Word Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/pamplemouse-au-poivre.jpg" alt="Pamplemousse au Poivre Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"> <img src="img/paper-lion.jpg" alt="Paper Lion Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/reno.jpg" alt="Reno Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/rhubarb-marg.jpg" alt="Rhubarb Margarita"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/seagull.jpg" alt="seagull Cocktail"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/spicy-chocolate-martini.jpg" alt="Spicy Chocolate Martini"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/spooky-cosmo.jpg" alt="Spooky Cosmo"></div></div>
+            <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/thai-takeout.jpg" alt="The Last That Takeout Cocktail"></div></div>
+           <div class="aspect-ratio-box"><div class="aspect-ratio-box-inside"><img src="img/wisecraft.jpg" alt="Wisecraft Tiki Cocktail"></div>  </div>
+    </div>
+
+</body>
+</html>
