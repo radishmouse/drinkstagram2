@@ -3,53 +3,29 @@ html, body {
     height: 100%;
     width: 100%;
 }
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
-@keyframes rollerCoaster {
-    0% {
-        /* x-index:0deg; */
-        opacity: 0;
-        transform: rotate(180deg) ;
-        
-    }
-    50%{
-        /* x-index:360deg; */
-        opacity: 1;
-        transform: rotate(360deg) scale(1.5);
-    }
-    100% {
-        opacity: 0;
-        transform: rotate(0deg);  
-    }
-}
- 
-@keyframes smoothOperator {
-    0%{
-        transform: rotate(-9deg) scale(1);
-    }
-    33% {
-        transform: rotate(0deg) scale(1.1);
-    }
-    66% {
-        transform: rotate(9deg) scale(1) ;
-     }
-     100% {
-        transform: rotate(0deg) scale(1.1);
-    }
-
-}
 
 .biggrid {
     display:flex;
         /* grid-template-columns: 500px; */
         align-items: flex-start;
         /* margin:auto; */
-        position: absolute;  /*this should be the viewport,*/
+        position: absolute;  
         position: sticky;
-        top :50px;
+        position: relative;
+        /* top positioning works...make it variable!! yOffset + 50 */
+        top :400px;
         display: flex;
         /* flex-direction: row; */
         justify-content: space-around;
         z-index: 10;
+        
     
 
 }
@@ -60,6 +36,8 @@ html, body {
     top:50px;
     margin: auto;
     /* z-index: 10; */
+    border: 3px solid chartreuse;
+
 
 
 }
@@ -132,52 +110,3 @@ h1 {
     opacity: .9;
 }
 
-/* .picture-frame:hover  img{
-    outline: 5px solid yellow;
-    transform: scale(1.10);
-    opacity: 1.0;
-    z-index: 4;
-}
-.picture-frame img:hover {
-    border: 2px solid red;
-
-} */
-
-/* NO SPACE BETWEEN .picture-frame and .big */
-/* because they are on the SAME LEVEL not nested */
-
-.picture-frame.big img {
-    
-    outline: 5px solid yellow;
-    /* transform: scale(2.10); */
-    /* opacity: 1.0; */
-    z-index: 4; 
-   
-    /* animation: rollerCoaster 3s  infinite ; */
-    animation: smoothOperator 5s  infinite ;
-
-}
-
-/*
-@media screen and (min-width: 500px) {
-    body {
-        background: yellow;
-    }
-        .picture-frame {
-           width:25%; 
-           border: 6px solid purple;
-            }
-}
-
-
-@media screen and (min-width: 1000px) {
-    body{
-        background: red;
-    }
-    .liquorcabinet {
-        flex-direction: column;
-    }
-
-}
-*/
-/* note the above settings WILL BE OVERWRITTEN BELOW */

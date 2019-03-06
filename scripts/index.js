@@ -34,6 +34,7 @@ function imageClicked(){
     console.log(imgSrc);
     bigImage.src = imgSrc;
     bigImage.classList.remove('hidden');
+    console.log(window.pageYOffset); // use this to change the top value for big image
 
 };
 
