@@ -7,6 +7,8 @@ console.log("hello new new");
 const targetElements = document.querySelectorAll('[data-target]');
 var lastImageClicked ;
 
+const bigImage = document.querySelector('[data-bigpic]');
+
 // function respondToClick(event)  works too
 function respondToClick() {
     lastImageClicked = event;
