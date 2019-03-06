@@ -38,6 +38,23 @@ html, body {
 
 }
 
+.bigimage {
+    width : 70%;
+    /* height: 400px; */
+    object-fit: cover;
+    position: absolute;
+    top:50px;
+    margin: auto;
+    z-index: 10;
+
+
+
+}
+*.hidden {
+    visibility: hidden;
+    /* display: none; */
+    z-index: -10;
+}
 
 h1 {
     width:80%;
