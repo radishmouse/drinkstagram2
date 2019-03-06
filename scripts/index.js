@@ -4,10 +4,24 @@ console.log("hello new new");
 //that is inside that .picture-frame
 
 // this finds/selects all the elements that have the attribute 'data-target' 
-const targetElements = document.querySelectorAll('[data-target]');
+
+//all images
+const targetElements = document.querySelectorAll('[data-image]');
 var lastImageClicked ;
 
 const bigImage = document.querySelector('[data-bigpic]');
+
+//assign event listener to each of the pictures
+targetElements.forEach(attachClickHandler);
+
+function attachClickHandler(oneElement) {
+    oneElement.addEventListener("click",respondToClick);
+}
+
+
+function imageClicked(){
+
+}
 
 // function respondToClick(event)  works too
 function respondToClick() {
@@ -18,9 +32,6 @@ function respondToClick() {
     console.log(event.target.parentElement);
     //this adds the class 'big' to the element you clicked on
     event.target.parentElement.classList.toggle("big");
-}
-function attachClickHandler(oneElement) {
-    oneElement.addEventListener("click",respondToClick);
 }
 //this is how we handle one element:
 // targetElements[0].addEventListener("click",respondToClick);
