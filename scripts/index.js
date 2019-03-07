@@ -51,5 +51,13 @@ function imageClicked(){
     bigGrid.style.top =  " " + (currYOffset+30) + "px";
     console.log(currYOffset);
 
+    // I like this! You identified an issue
+    // with the UI ("User can no longer see the image if they scroll down.")
+    // and then wrote code to deal with it.
+    // There are other approaches, though. For example,
+    // you could make the thumbnails scroll independently
+    // by adding this style to the thumbnail container: `overflow-y: auto` and setting
+    // the big image to `position: absolute`.
+    
 }
 
