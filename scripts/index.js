@@ -34,6 +34,7 @@ function imageClicked(){
     const imgSrc = event.target.src;
     console.log(imgSrc);
     bigImage.src = imgSrc;
+    //because of the border, i have to remove the class from both divs
     bigImage.classList.remove('hidden');
     bigGrid.classList.remove('hidden');
 
