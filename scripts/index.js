@@ -1,4 +1,3 @@
-console.log("hello new new");
 
 //when we click on a .picture-frame we see an enlarged version of the image
 //that is inside that .picture-frame
@@ -11,15 +10,16 @@ const targetElements = document.querySelectorAll('[data-image]');
 
 const bigImage = document.querySelector('[data-bigpic]');
 
+const bigGrid = document.querySelector('[data-grid]');
+    
+
 //assign event listener to each of the pictures
-
-
 targetElements.forEach(attachClickHandler);
 
 function attachClickHandler(oneElement) {
     oneElement.addEventListener("click",imageClicked);
 }
-
+//assign event listener to big image
 bigImage.addEventListener("click",hideBigImage);
 
 function hideBigImage() {
@@ -34,7 +34,16 @@ function imageClicked(){
     console.log(imgSrc);
     bigImage.src = imgSrc;
     bigImage.classList.remove('hidden');
-    console.log(window.pageYOffset); // use this to change the top value for big image
 
-};
+    //update the style for bigImage to be the xoffset + 50 pixels
+    //otherwise the big picture is constantly at 50px from the top of the page.
+    //if you scroll down, you can't see it.
+
+    // use this to change the top value for big image
+    const currYOffset = window.pageYOffset; 
+
+    bigGrid.style.top =  " " + (currYOffset+30) + "px";
+    console.log(currYOffset);
+
+}
 

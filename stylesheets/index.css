@@ -13,19 +13,18 @@ html {
 
 .biggrid {
     display:flex;
-        /* grid-template-columns: 500px; */
         align-items: flex-start;
         /* margin:auto; */
         position: absolute;  
         position: sticky;
         position: relative;
         /* top positioning works...make it variable!! yOffset + 50 */
-        top :400px;
+        /* top :400px; */
         display: flex;
         /* flex-direction: row; */
         justify-content: space-around;
         z-index: 10;
-        
+
     
 
 }
@@ -33,7 +32,7 @@ html {
     width : 60%;
     /* height: 400px; */
     object-fit: cover;
-    top:50px;
+    /* top:50px; */
     margin: auto;
     /* z-index: 10; */
     border: 3px solid chartreuse;
