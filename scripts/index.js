@@ -25,6 +25,7 @@ bigImage.addEventListener("click",hideBigImage);
 function hideBigImage() {
     event.target.classList.toggle('hidden');
     bigImage.src = "";
+    bigGrid.classList.toggle('hidden');
 
 }
 
@@ -34,12 +35,16 @@ function imageClicked(){
     console.log(imgSrc);
     bigImage.src = imgSrc;
     bigImage.classList.remove('hidden');
+    bigGrid.classList.remove('hidden');
+
 
     //update the style for bigImage to be the xoffset + 50 pixels
     //otherwise the big picture is constantly at 50px from the top of the page.
     //if you scroll down, you can't see it.
-
     // use this to change the top value for big image
+
+    //is this OK as an inline style change?
+    //OR is it better to use a CSS variable???
     const currYOffset = window.pageYOffset; 
 
     bigGrid.style.top =  " " + (currYOffset+30) + "px";

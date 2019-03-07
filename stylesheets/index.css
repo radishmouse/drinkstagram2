@@ -12,28 +12,34 @@ html {
 
 
 .biggrid {
-    display:flex;
+        display:flex;
         align-items: flex-start;
-        /* margin:auto; */
-        position: absolute;  
-        position: sticky;
+        /* position: absolute;   */
+        /* position: sticky; */
         position: relative;
-        /* top positioning works...make it variable!! yOffset + 50 */
-        /* top :400px; */
         display: flex;
         /* flex-direction: row; */
         justify-content: space-around;
         z-index: 10;
-
-    
-
 }
+/*
+.forceShape {
+    width:500px; 
+    height:500px;
+object-fit: cover;
+   
+    visibility:inherit;
+}
+*/
+
 .bigimage {
-    width : 60%;
-    /* height: 400px; */
+    width : 400px;
+    height: 400px;
     object-fit: cover;
+    /* height: 400px; */
+    /* object-fit: cover; */
     /* top:50px; */
-    margin: auto;
+    /* margin: auto; */
     /* z-index: 10; */
     border: 3px solid chartreuse;
 
@@ -41,9 +47,10 @@ html {
 
 }
 *.hidden {
-    visibility: hidden;
-    /* display: none; */
+    /* visibility: hidden; */
+    display: none;
     z-index: -10;
+    width:0px;
 }
 
 h1 {
